@@ -2,7 +2,8 @@
 const express = require('express');
 const app = express();
 require('dotenv').config();
-const PORT = process.env.PORT; 
+const PORT = process.env.PORT;
+const apiKey = process.env.OMDB_API_KEY;
 
 // ROUTES
 // TEST ROUTE
