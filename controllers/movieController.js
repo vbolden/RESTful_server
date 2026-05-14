@@ -26,7 +26,7 @@ const searchMovies = async (req, res) => {
 
 const getMovieDetails = async (req, res) => {
     try {
-        const id = req.query.id;
+        const id = req.params.id;
 
         if (!id) {
             return res.status(400).json({ "Error": "ID query parameter is required" });
