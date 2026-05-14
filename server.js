@@ -15,6 +15,9 @@ app.get("/", (req, res) => {
     res.send("Testing...");
 });
 
+// USE MOVIE ROUTER
+app.use(movieRouter);
+
 // PORT
 app.listen(PORT, () => {
     console.log(`Running on PORT: ${PORT}`);
