@@ -17,7 +17,11 @@ const searchMovies = async (req, res) => {
             }
         });
 
+        res.json(apiResponse.data)
+
     } catch (error) {
         res.status(500).json({ error: 'An error occurred while searching for movies.' });
     }
 };
+
+module.exports = searchMovies;
