@@ -17,10 +17,30 @@ const searchMovies = async (req, res) => {
             }
         });
 
-        res.json(apiResponse.data)
+        res.json(apiResponse.data);
 
     } catch (error) {
-        res.status(500).json({ error: 'An error occurred while searching for movies.' });
+        res.status(500).json({ error: 'Failed to fetch movie data.' });
+    }
+};
+
+const getMovieDetails = async (req, res) => {
+    try {
+        const id = req.query.id;
+
+        if (!id) {
+            return res.status(400).json({ "Error": "ID query parameter is required" });
+        }
+
+        const apiResponse = await axios.get("http://www.omdbapi.com/", {
+            params: {
+                id: id,
+                apiKey: apiKey,
+            }
+        });
+
+    } catch (error) {
+        res.status(500).json({ error: 'Failed to fetch movie data.' });
     }
 };
 
