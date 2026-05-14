@@ -7,13 +7,13 @@ const searchMovies = async (req, res) => {
         const title = req.query.title;
 
         if (!title) {
-            return res.status(400).json({ "Error": "Title query parameter is required" });
+            return res.status(400).json({ "error": "Title query parameter is required" });
         }
 
         const apiResponse = await axios.get("http://www.omdbapi.com/", {
             params: {
                 s: title,
-                apiKey: apiKey,
+                apikey: apiKey,
             }
         });
 
