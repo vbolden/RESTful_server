@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 });
 
 // USE MOVIE ROUTER
-app.use(movieRouter);
+app.use("/api", movieRouter);
 
 // PORT
 app.listen(PORT, () => {
