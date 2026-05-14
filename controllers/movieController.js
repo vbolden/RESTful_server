@@ -34,7 +34,7 @@ const getMovieDetails = async (req, res) => {
 
         const apiResponse = await axios.get("http://www.omdbapi.com/", {
             params: {
-                id: id,
+                i: id,
                 apiKey: apiKey,
             }
         });
@@ -44,4 +44,4 @@ const getMovieDetails = async (req, res) => {
     }
 };
 
-module.exports = searchMovies;
+module.exports = { searchMovies, getMovieDetails };
